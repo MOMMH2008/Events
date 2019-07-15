@@ -37,7 +37,7 @@ extension Endpoint {
     
     /// Base url with serviceUrl
     var url: String {
-        return "http://private-7466b-eventtuschanllengeapis.apiary-mock.com" + serviceUrl
+        return "http://private-7466b-eventtuschanllengeapis.apiary-mock.com/" + serviceUrl
     }
     
     var headers: [String: String]? {
@@ -55,7 +55,7 @@ extension Endpoint {
     var isCacheable: Cacheable {
         return .no
     }
-    var identifier: String {
+    var cacheIdentifier: String {
         return ""
     }
     

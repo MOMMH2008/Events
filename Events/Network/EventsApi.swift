@@ -22,8 +22,9 @@ class EventsApi {
         switch isCacheable {
         case .yes(let timetoLive):
             let expiry = timetoLive.time
+            /// Get Data from offline cash
             if let dataJson = DataCache.shared.getDataObject(key: identifier) {
-                self.offlineRequest(url, data: dataJson, identifier: identifier, expiry: 0.0, completion: completion)
+                self.jsonParsing(url, data: dataJson, identifier: identifier, expiry: 0.0, completion: completion)
             } else {
                 self.networkRequest(url: url,
                                headers: headers,
@@ -45,9 +46,8 @@ class EventsApi {
                            completion: completion)
         }
     }
-    
-    /// Get Data from offline cash
-    static func offlineRequest<T: Decodable>(_ url: String,
+
+    static func jsonParsing<T: Decodable>(_ url: String,
                                             data: Data,
                                             identifier: String,
                                             expiry: TimeInterval,
@@ -59,8 +59,8 @@ class EventsApi {
                 if expiry != 0.0 {
                     DataCache.shared.setDataObject(data, key: identifier, _expiry: expiry)
                 }
-                let data = try decoder.decode(T.self, from: data)
-                completion(.success(data))
+                let model = try decoder.decode(T.self, from: data)
+                completion(.success(model))
             } catch let error {
                 // return decoding failed
                 completion(.failure(error))
@@ -82,7 +82,7 @@ class EventsApi {
         NetworkService.request(url: url, headers: headers, httpMethod: httpMethod, parameters: parameters, isPrintable: isPrintable) { (result) in
             switch result {
             case .success(let data):
-                self.offlineRequest(url, data: data, identifier: identifier, expiry: expiry, completion: completion)
+                self.jsonParsing(url, data: data, identifier: identifier, expiry: expiry, completion: completion)
             case .failure(let error):
                 completion(.failure(error))
             }

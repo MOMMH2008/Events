@@ -19,6 +19,9 @@
 		8B14C03D22DC4F8000B30396 /* NetworkSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B14C03C22DC4F8000B30396 /* NetworkSupport.swift */; };
 		8B14C03F22DC538900B30396 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B14C03E22DC538900B30396 /* DataCache.swift */; };
 		8B14C04122DC596C00B30396 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B14C04022DC596C00B30396 /* Endpoint.swift */; };
+		8B14C04322DC738B00B30396 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B14C04222DC738B00B30396 /* Router.swift */; };
+		8B14C04622DCB70300B30396 /* ModelEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B14C04522DCB70300B30396 /* ModelEventType.swift */; };
+		8B14C04822DCB74400B30396 /* ModelEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B14C04722DCB74400B30396 /* ModelEvent.swift */; };
 		A8E3EE2EC9391DF0BA37AAC4 /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6915D23A4F30EF54D69014DB /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		8B14C03C22DC4F8000B30396 /* NetworkSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSupport.swift; sourceTree = "<group>"; };
 		8B14C03E22DC538900B30396 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		8B14C04022DC596C00B30396 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8B14C04222DC738B00B30396 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8B14C04522DCB70300B30396 /* ModelEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEventType.swift; sourceTree = "<group>"; };
+		8B14C04722DCB74400B30396 /* ModelEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,9 @@
 		8B14C01F22DAF4C400B30396 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				8B14C04422DCB6BD00B30396 /* Models */,
 				8B14C03522DBFEAE00B30396 /* Support */,
-				8B14C03222DBFCC400B30396 /* Networks */,
+				8B14C03222DBFCC400B30396 /* Network */,
 				8B14C02022DAF4C400B30396 /* AppDelegate.swift */,
 				8B14C02222DAF4C400B30396 /* ViewController.swift */,
 				8B14C02422DAF4C400B30396 /* Main.storyboard */,
@@ -96,7 +103,7 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
-		8B14C03222DBFCC400B30396 /* Networks */ = {
+		8B14C03222DBFCC400B30396 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				8B14C03322DBFD4A00B30396 /* NetworkService.swift */,
@@ -104,8 +111,9 @@
 				8B14C03C22DC4F8000B30396 /* NetworkSupport.swift */,
 				8B14C03E22DC538900B30396 /* DataCache.swift */,
 				8B14C04022DC596C00B30396 /* Endpoint.swift */,
+				8B14C04222DC738B00B30396 /* Router.swift */,
 			);
-			path = Networks;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		8B14C03522DBFEAE00B30396 /* Support */ = {
@@ -115,6 +123,15 @@
 				8B14C03822DC004A00B30396 /* Dictionary+Extension.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		8B14C04422DCB6BD00B30396 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B14C04522DCB70300B30396 /* ModelEventType.swift */,
+				8B14C04722DCB74400B30396 /* ModelEvent.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E8DF98596C922A24BB75FC5D /* Frameworks */ = {
@@ -242,6 +259,9 @@
 			files = (
 				8B14C03F22DC538900B30396 /* DataCache.swift in Sources */,
 				8B14C04122DC596C00B30396 /* Endpoint.swift in Sources */,
+				8B14C04822DCB74400B30396 /* ModelEvent.swift in Sources */,
+				8B14C04322DC738B00B30396 /* Router.swift in Sources */,
+				8B14C04622DCB70300B30396 /* ModelEventType.swift in Sources */,
 				8B14C03D22DC4F8000B30396 /* NetworkSupport.swift in Sources */,
 				8B14C02322DAF4C400B30396 /* ViewController.swift in Sources */,
 				8B14C03B22DC2E2F00B30396 /* EventsApi.swift in Sources */,
