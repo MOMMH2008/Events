@@ -25,4 +25,4 @@ MVVM :- To make separation of concerns and add two way binding
 
 3. **Parchment**: For Tabs button
 
-4. **Cache**: For Chasing and enable offline mode
+4. **Cache**: For Caching and enable offline mode
