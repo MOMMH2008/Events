@@ -33,6 +33,7 @@
 		8BB2C68122DD994F00415925 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2C67F22DD994F00415925 /* LoadingCell.swift */; };
 		8BB2C68222DD994F00415925 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB2C68022DD994F00415925 /* LoadingCell.xib */; };
 		8BB2C68522DDAE0900415925 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2C68422DDAE0900415925 /* EventDetailsViewController.swift */; };
+		8BB2C68722DDCA1400415925 /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2C68622DDCA1400415925 /* TimeInterval+Extension.swift */; };
 		A8E3EE2EC9391DF0BA37AAC4 /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6915D23A4F30EF54D69014DB /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		8BB2C67F22DD994F00415925 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		8BB2C68022DD994F00415925 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		8BB2C68422DDAE0900415925 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		8BB2C68622DDCA1400415925 /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				8B14C03622DBFEC000B30396 /* PrintHelper.swift */,
 				8B14C03822DC004A00B30396 /* Dictionary+Extension.swift */,
+				8BB2C68622DDCA1400415925 /* TimeInterval+Extension.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B14C03F22DC538900B30396 /* DataCache.swift in Sources */,
+				8BB2C68722DDCA1400415925 /* TimeInterval+Extension.swift in Sources */,
 				8B14C04122DC596C00B30396 /* Endpoint.swift in Sources */,
 				8B20779622DD55630079CD86 /* EventTypeViewModel.swift in Sources */,
 				8B14C04822DCB74400B30396 /* ModelEvent.swift in Sources */,

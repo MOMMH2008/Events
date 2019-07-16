@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 class EventCellTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var statDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
@@ -19,10 +19,10 @@ class EventCellTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     func setcell(event: ModelEvent) {

@@ -25,7 +25,12 @@ class EventsListViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupEventTable()
+        viewModel = EventsListViewModelImp()
+        viewModel?.getEvents(eventType: eventType, page: "\(pageIndex)")
+    }
+    
+    func setupEventTable(){
         eventsTable.dataSource = self
         eventsTable.delegate = self
         eventsTable.tableFooterView = UIView()
@@ -36,12 +41,6 @@ class EventsListViewController: UIViewController {
         self.view.addSubview(eventsTable)
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         eventsTable.addSubview(refreshControl)
-        
-        
-        viewModel = EventsListViewModelImp()
-        viewModel?.getEvents(eventType: eventType, page: "\(pageIndex)")
-        
-        // Do any additional setup after loading the view.
     }
     
     @objc func refreshTable(refreshControl: UIRefreshControl) {
@@ -100,8 +99,8 @@ extension EventsListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "EventCellTableViewCell", for: indexPath) as? EventCellTableViewCell {
-                 let event = appendedEventsList[indexPath.row]
-                    cell.setcell(event: event)
+                let event = appendedEventsList[indexPath.row]
+                cell.setcell(event: event)
                 cell.selectionStyle = .none
                 return cell
             } else {
@@ -140,7 +139,7 @@ extension EventsListViewController: UITableViewDataSource, UITableViewDelegate{
         let offsetY = scrollView.contentOffset.y
         let contentHeight = cellSize * appendedEventsList.count
         
-      if (offsetY > CGFloat(contentHeight) - scrollView.frame.height * CGFloat(pageIndex)) && (offsetY > 0) && (pageIndex < 3){
+        if (offsetY > CGFloat(contentHeight) - scrollView.frame.height * CGFloat(pageIndex)) && (offsetY > 0) && (pageIndex < 3){
             if !fetchingMore {
                 beginBatchFetch()
             }

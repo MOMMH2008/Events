@@ -35,17 +35,6 @@ class DataCache {
 }
 
 extension DataCache {
-    
-    func setStringObject(_ value: String, key: String, _expiry: TimeInterval) {
-        let stringStorge = dataStorage.transformCodable(ofType: String.self)
-        try! stringStorge.setObject(value, forKey: key, expiry: .seconds(_expiry))
-    }
-    
-    func getStringObject(key: String) -> String? {
-        let stringStorge = dataStorage.transformCodable(ofType: String.self)
-        return try? stringStorge.object(forKey: key)
-    }
-    
     func setDataObject(_ data: Data, key: String, _expiry: TimeInterval) {
         try! dataStorage.setObject(data, forKey: key, expiry: .seconds(_expiry))
     }
@@ -54,12 +43,4 @@ extension DataCache {
         return try? dataStorage.object(forKey: key)
     }
     
-    func setModelObject<T: Codable>(_ model: T, key: String) {
-        let modelStorge = dataStorage.transformCodable(ofType: T.self)
-        try! modelStorge.setObject(model, forKey: key)
-    }
-    func getModelObjct<T: Codable>(_ model: T, key: String) -> T? {
-        let modelStorge = dataStorage.transformCodable(ofType: T.self)
-        return try? modelStorge.object(forKey: key)
-    }
 }

@@ -10,7 +10,7 @@ import UIKit
 import Parchment
 
 class EventTypeViewController: UIViewController {
-
+    
     // get instance of VM
     var viewModel: EventTypeViewModel? {
         didSet {
@@ -47,8 +47,8 @@ class EventTypeViewController: UIViewController {
             ])
     }
     
-
-
+    
+    
 }
 // this part realted to the VM updated listener
 extension EventTypeViewController {
@@ -64,7 +64,7 @@ extension EventTypeViewController {
         }
         
         viewModel.updatedModelEventType.bind {
-       //     self.stopAnimating()
+            //     self.stopAnimating()
             if $0 {
                 self.pagingViewController.reloadData()
                 self.pagingViewController.reloadMenu()

@@ -22,7 +22,7 @@ class EventTypeViewModelImp: EventTypeViewModel {
         self.updatedModelEventType = Dynamic(false)
     }
     
-     func getEventType() {
+    func getEventType() {
         ModelEventType.getEventtypesRequest() { [unowned self] (result) in
             switch result {
             case .success(let eventType):

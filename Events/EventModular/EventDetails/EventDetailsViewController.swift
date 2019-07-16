@@ -24,7 +24,9 @@ class EventDetailsViewController: UIViewController {
         if let photoUrl = eventDetails.cover {
             evenImgeView.kf.setImage(with: URL(string: photoUrl))
         }
-        
+        updateMap()
+    }
+    func updateMap() {
         // define the map zoom span
         let latitudZoomLevel : CLLocationDegrees = 0.5
         let longitudZoomLevel : CLLocationDegrees = 0.5

@@ -23,61 +23,61 @@ class EventsApi {
         case .yes(let timetoLive):
             let expiry = timetoLive.time
             /// Get Data from offline cash
-            if let dataJson = DataCache.shared.getDataObject(key: identifier) {
+            if let dataJson = DataCache.shared.getDataObject(key: identifier) , identifier != "" {
                 self.jsonParsing(url, data: dataJson, identifier: identifier, expiry: 0.0, completion: completion)
             } else {
                 self.networkRequest(url: url,
-                               headers: headers,
-                               httpMethod: httpMethod,
-                               parameters: parameters,
-                               isPrintable: isPrintable,
-                               expiry: expiry,
-                               identifier: identifier,
-                               completion: completion)
+                                    headers: headers,
+                                    httpMethod: httpMethod,
+                                    parameters: parameters,
+                                    isPrintable: isPrintable,
+                                    expiry: expiry,
+                                    identifier: identifier,
+                                    completion: completion)
             }
         case .no:
             self.networkRequest(url: url,
-                           headers: headers,
-                           httpMethod: httpMethod,
-                           parameters: parameters,
-                           isPrintable: isPrintable,
-                           expiry: 0.0,
-                           identifier: identifier,
-                           completion: completion)
+                                headers: headers,
+                                httpMethod: httpMethod,
+                                parameters: parameters,
+                                isPrintable: isPrintable,
+                                expiry: 0.0,
+                                identifier: identifier,
+                                completion: completion)
         }
     }
-
+    
     static func jsonParsing<T: Decodable>(_ url: String,
-                                            data: Data,
-                                            identifier: String,
-                                            expiry: TimeInterval,
-                                            completion: @escaping Response<T>) {
+                                          data: Data,
+                                          identifier: String,
+                                          expiry: TimeInterval,
+                                          completion: @escaping Response<T>) {
         
-            do {
-                let decoder = JSONDecoder()
-                /// add cache
-                if expiry != 0.0 {
-                    DataCache.shared.setDataObject(data, key: identifier, _expiry: expiry)
-                }
-                let model = try decoder.decode(T.self, from: data)
-                completion(.success(model))
-            } catch let error {
-                // return decoding failed
-                completion(.failure(error))
-                PrintHelper.logNetwork("❌ Error in Mapping\n\(url)\nError:\n\(error)")
+        do {
+            let decoder = JSONDecoder()
+            /// add cache
+            if expiry != 0.0 {
+                DataCache.shared.setDataObject(data, key: identifier, _expiry: expiry)
             }
+            let model = try decoder.decode(T.self, from: data)
+            completion(.success(model))
+        } catch let error {
+            // return decoding failed
+            completion(.failure(error))
+            PrintHelper.logNetwork("❌ Error in Mapping\n\(url)\nError:\n\(error)")
+        }
         
     }
     
     /// Get Data from online Server
     static func networkRequest<T: Decodable>(url: String,
-                                        headers: [String: String]? = nil,
-                                        httpMethod: HTTPMethod,
-                                        parameters: [String: Any]? = nil,
-                                        isPrintable: Bool,
-                                        expiry: TimeInterval,
-                                        identifier: String,
-                                        completion: @escaping Response<T>) {
+                                             headers: [String: String]? = nil,
+                                             httpMethod: HTTPMethod,
+                                             parameters: [String: Any]? = nil,
+                                             isPrintable: Bool,
+                                             expiry: TimeInterval,
+                                             identifier: String,
+                                             completion: @escaping Response<T>) {
         
         NetworkService.request(url: url, headers: headers, httpMethod: httpMethod, parameters: parameters, isPrintable: isPrintable) { (result) in
             switch result {

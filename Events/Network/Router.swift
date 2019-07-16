@@ -36,13 +36,13 @@ enum RouterEvents: Endpoint{
     var isCacheable: Cacheable {
         switch self {
         case .getEventtypes:
-            return .no //.yes(timeToLive: .oneWeek)
+            return .yes(timeToLive: .oneWeek)
         case .getEvents:
-            return .no //.yes(timeToLive: .oneHour)
+            return .yes(timeToLive: .oneHour)
         }
     }
     
-    var identifier: String {
+    var cacheIdentifier: String {
         return serviceUrl
     }
     
