@@ -81,7 +81,9 @@ extension EventTypeViewController : PagingViewControllerDataSource {
     }
     
     func pagingViewController<T>(_ pagingViewController: PagingViewController<T>, viewControllerForIndex index: Int) -> UIViewController where T : PagingItem, T : Comparable, T : Hashable {
-        return CityViewController(title: viewModel?.eventType[index].name ?? "")
+        let eventsListViewController = EventsListViewController()
+        eventsListViewController.eventType = (viewModel?.eventType[index].name ?? "").lowercased()
+        return eventsListViewController
     }
     
     func pagingViewController<T>(_ pagingViewController: PagingViewController<T>, pagingItemForIndex index: Int) -> T where T : PagingItem, T : Comparable, T : Hashable {
