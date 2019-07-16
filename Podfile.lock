@@ -2,31 +2,31 @@ PODS:
   - Alamofire (4.7.2)
   - Cache (5.2.0)
   - Kingfisher (5.7.0)
+  - Parchment (1.6.0)
   - SwiftLint (0.25.1)
-  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - Cache
+  - Alamofire (~> 4.7.2)
+  - Cache (~> 5.2.0)
   - Kingfisher (~> 5.0)
-  - SwiftLint
-  - XLPagerTabStrip (~> 9.0)
+  - Parchment
+  - SwiftLint (~> 0.25.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Cache
     - Kingfisher
+    - Parchment
     - SwiftLint
-    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
+  Parchment: d3a7b367c529fa6ef51aa43f5717a7ff36d4b1f5
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
-  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 0827f0b2226a127e06cca5f36774db2abf582166
+PODFILE CHECKSUM: 86df5e117095aff40910ee4ca99db3dbc5bc61ae
 
 COCOAPODS: 1.7.4

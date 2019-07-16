@@ -27,3 +27,10 @@ struct ModelEvent: Codable {
         case id = "id"
     }
 }
+
+extension ModelEvent {
+    // For End Point
+    static func getEventsRequest(eventType: String, page: String, completion: @escaping Response<[ModelEvent]>) {
+        RouterEvents.getEvents(eventType: eventType, page: page).request(completion: completion)
+    }
+}

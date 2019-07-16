@@ -17,3 +17,11 @@ struct ModelEventType: Codable {
         case id = "id"
     }
 }
+extension ModelEventType {
+    // For End Point
+    static func getEventtypesRequest(completion: @escaping Response<[ModelEventType]>) {
+        RouterEvents.getEventtypes.request(completion: completion)
+    }
+}
+
+

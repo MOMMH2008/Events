@@ -17,7 +17,7 @@ target 'Events' do
   pod 'Kingfisher', '~> 5.0'
 
   # For add taps
-  pod 'XLPagerTabStrip', '~> 9.0'
+  pod 'Parchment', '~> 1.6.0'
   
   # For offline cashe
   pod 'Cache', '~> 5.2.0'
