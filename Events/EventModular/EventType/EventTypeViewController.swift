@@ -21,10 +21,14 @@ class EventTypeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
+        
         viewModel = EventTypeViewModelImp()
         viewModel?.getEventType()
         setTabsPager()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func setTabsPager() {

@@ -29,7 +29,7 @@ class EventCellTableViewCell: UITableViewCell {
         eventPhoto.image = nil
         eventNameLabel.text = event.name
         statDateLabel.text = "Start : " + (event.startDate ?? "")
-        statDateLabel.text = "End : " +  (event.endDate ?? "")
+        endDateLabel.text = "End : " +  (event.endDate ?? "")
         if let photoUrl = event.cover {
             eventPhoto.kf.setImage(with: URL(string: photoUrl))
         }

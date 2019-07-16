@@ -30,6 +30,9 @@
 		8B2077A222DD715E0079CD86 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2077A122DD715E0079CD86 /* EventsListViewController.swift */; };
 		8B2077A422DD716A0079CD86 /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2077A322DD716A0079CD86 /* EventsListViewModel.swift */; };
 		8B2077A622DD717C0079CD86 /* EventsListViewModel_IMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2077A522DD717C0079CD86 /* EventsListViewModel_IMP.swift */; };
+		8BB2C68122DD994F00415925 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2C67F22DD994F00415925 /* LoadingCell.swift */; };
+		8BB2C68222DD994F00415925 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB2C68022DD994F00415925 /* LoadingCell.xib */; };
+		8BB2C68522DDAE0900415925 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2C68422DDAE0900415925 /* EventDetailsViewController.swift */; };
 		A8E3EE2EC9391DF0BA37AAC4 /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6915D23A4F30EF54D69014DB /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,9 @@
 		8B2077A122DD715E0079CD86 /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
 		8B2077A322DD716A0079CD86 /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
 		8B2077A522DD717C0079CD86 /* EventsListViewModel_IMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel_IMP.swift; sourceTree = "<group>"; };
+		8BB2C67F22DD994F00415925 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		8BB2C68022DD994F00415925 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		8BB2C68422DDAE0900415925 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 			children = (
 				8B20779F22DD71160079CD86 /* EventType */,
 				8B2077A022DD712E0079CD86 /* EventsList */,
+				8BB2C68322DDADC300415925 /* EventDetails */,
 			);
 			path = EventModular;
 			sourceTree = "<group>";
@@ -186,8 +193,18 @@
 			children = (
 				8B20779B22DD707E0079CD86 /* EventCellTableViewCell.swift */,
 				8B20779C22DD707E0079CD86 /* EventCellTableViewCell.xib */,
+				8BB2C67F22DD994F00415925 /* LoadingCell.swift */,
+				8BB2C68022DD994F00415925 /* LoadingCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		8BB2C68322DDADC300415925 /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8BB2C68422DDAE0900415925 /* EventDetailsViewController.swift */,
+			);
+			path = EventDetails;
 			sourceTree = "<group>";
 		};
 		E8DF98596C922A24BB75FC5D /* Frameworks */ = {
@@ -261,6 +278,7 @@
 				8B20779E22DD707E0079CD86 /* EventCellTableViewCell.xib in Resources */,
 				8B14C02B22DAF4C600B30396 /* LaunchScreen.storyboard in Resources */,
 				8B14C02822DAF4C600B30396 /* Assets.xcassets in Resources */,
+				8BB2C68222DD994F00415925 /* LoadingCell.xib in Resources */,
 				8B14C02622DAF4C400B30396 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +346,8 @@
 				8B14C03B22DC2E2F00B30396 /* EventsApi.swift in Sources */,
 				8B20779322DD54F00079CD86 /* EventTypeViewController.swift in Sources */,
 				8B2077A422DD716A0079CD86 /* EventsListViewModel.swift in Sources */,
+				8BB2C68122DD994F00415925 /* LoadingCell.swift in Sources */,
+				8BB2C68522DDAE0900415925 /* EventDetailsViewController.swift in Sources */,
 				8B14C03722DBFEC000B30396 /* PrintHelper.swift in Sources */,
 				8B14C03422DBFD4A00B30396 /* NetworkService.swift in Sources */,
 				8B14C02122DAF4C400B30396 /* AppDelegate.swift in Sources */,

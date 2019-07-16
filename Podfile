@@ -10,9 +10,6 @@ target 'Events' do
   # For Networking
   pod 'Alamofire', '~> 4.7.2'
 
-  # For Formating the Code
-  pod 'SwiftLint', '~> 0.25.1'
-  
   # For Download and chashe Photos
   pod 'Kingfisher', '~> 5.0'
 
